@@ -11,6 +11,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import './components/Map/styles.css'
 import MapChart from './components/Map/MapChart'
+import Timeline from './components/Timeline';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <VStack spacing={8}>
             <MapChart />
             <Divider />
+            <Timeline />
           </VStack>
         </Grid>
         <Footer />

@@ -7,6 +7,8 @@ import {
   Marker,
   Annotation
 } from "react-simple-maps";
+import { useColorModeValue } from "@chakra-ui/color-mode";
+import { Text } from '@chakra-ui/react'
 
 import allStates from "./data/allstates.json";
 
@@ -24,6 +26,8 @@ const offsets = {
   DC: [49, 21]
 };
 
+
+
 const MapChart = () => {
   return (
     <ComposableMap projection="geoAlbersUsa">
@@ -38,7 +42,8 @@ const MapChart = () => {
                 fill="#DDD"
               />
             ))}
-            {/* {geographies.map(geo => {
+            {/* this controls the state code on the map */}
+            {geographies.map(geo => {
               const centroid = geoCentroid(geo);
               const cur = allStates.find(s => s.val === geo.id);
               return (
@@ -58,19 +63,23 @@ const MapChart = () => {
                         dx={offsets[cur.id][0]}
                         dy={offsets[cur.id][1]}
                       >
-                        <text x={4} fontSize={14} alignmentBaseline="middle">
-                          {cur.id}
-                        </text>
+                            <text x={4} fontSize={14} alignmentBaseline="middle">
+                                {cur.id}
+                            </text>
                       </Annotation>
                     ))}
                 </g>
               );
-            })} */}
+            })}
           </>
         )}
       </Geographies>
+      {/* Here is where we will populate the markers given from the API's geocoding */}
       <Marker coordinates={[-74.006, 40.7128]} >
-      <circle r={3} fill="#F53" />
+        <circle r={3} fill="#F53" />
+      </Marker>
+      <Marker coordinates={[-111.8162931, 40.6183158]} >
+        <circle r={3} fill="#F53" />
       </Marker>
     </ComposableMap>
   );
