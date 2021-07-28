@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -7,8 +7,7 @@ import {
   Marker,
   Annotation
 } from "react-simple-maps";
-import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Text } from '@chakra-ui/react'
+import axios from 'axios'
 
 import allStates from "./data/allstates.json";
 
@@ -27,8 +26,8 @@ const offsets = {
 };
 
 
-
 const MapChart = () => {
+
   return (
     <ComposableMap projection="geoAlbersUsa">
       <Geographies geography={geoUrl}>
