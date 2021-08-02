@@ -4,6 +4,7 @@ import { Box, Text, Link } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { GiPoliceOfficerHead } from 'react-icons/gi'
+import './timelineStyles.css'
 
 
 export default function Timeline() {
@@ -22,8 +23,10 @@ export default function Timeline() {
             contentStyle={{ background: '#FF5533', color: '#fff' }}
             contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
             date={incident.date}
+            dateClassName={'vertical-timeline-element-date'}
             iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
             icon={<GiPoliceOfficerHead />}
+            key={incident.id}
         >
             <h3 className="vertical-timeline-element-title">{incident.title}</h3>
             <Text className="vertical-timeline-element-subtitle">{incident.city}</Text>
@@ -35,10 +38,9 @@ export default function Timeline() {
         </VerticalTimelineElement>
     )
 
-
-
     return (
         <Box>
+            <Text fontSize='4xl'>Timeline of Incidents</Text>
             <VerticalTimeline>
                 <VerticalTimelineElement
                 className="vertical-timeline-element--work"

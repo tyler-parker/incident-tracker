@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
