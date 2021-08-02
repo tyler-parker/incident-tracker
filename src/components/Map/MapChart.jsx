@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { geoCentroid } from "d3-geo";
 import {
   ComposableMap,
@@ -7,7 +7,7 @@ import {
   Marker,
   Annotation
 } from "react-simple-maps";
-import axios from 'axios'
+import MapMarkers from "../../context/MapMarkers";
 
 import allStates from "./data/allstates.json";
 
@@ -74,12 +74,13 @@ const MapChart = () => {
         )}
       </Geographies>
       {/* Here is where we will populate the markers given from the API's geocoding */}
-      <Marker coordinates={[-74.006, 40.7128]} >
+      {/* <Marker coordinates={[-74.006, 40.7128]} >
         <circle r={3} fill="#F53" />
       </Marker>
       <Marker coordinates={[-111.8162931, 40.6183158]} >
         <circle r={3} fill="#F53" />
-      </Marker>
+      </Marker> */}
+      <MapMarkers />
     </ComposableMap>
   );
 };

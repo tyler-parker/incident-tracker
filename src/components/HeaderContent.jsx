@@ -19,7 +19,7 @@ export function HeaderContent() {
                 </Flex>  
     
                 <Flex justifyContent='flex-end' alignItems='space-around'>
-                    <Link href='https://github.com/tyler-parker/ugly-things' isExternal>
+                    <Link href='https://github.com/tyler-parker/police-brutality-project' isExternal>
                         <IconButton icon={<VscGithub />} isRound ></IconButton>
                     </Link>
                     <ColorModeSwitcher justifySelf="flex-end"/>

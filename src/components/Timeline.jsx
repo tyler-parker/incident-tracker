@@ -55,16 +55,16 @@ export default function Timeline() {
                 </Text>
                     {/* {incident.links.map(l => <Link href={l} isExternal>{l}</Link> )} */}
                 <blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">LAPD just shot someone with their less lethal shotgun at almost point blank for no reason. 
-<a href="https://t.co/JVDCbHgXJq">pic.twitter.com/JVDCbHgXJq
-</a>
-</p>&mdash; joeyneverjoe (he/him) (@joeyneverjoe) 
-<a href="https://twitter.com/joeyneverjoe/status/1416461219884457984?ref_
-src=twsrc%5Etfw">July 17, 2021
-</a>
-</blockquote> 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
-></script>
+                    <p lang="en" dir="ltr">LAPD just shot someone with their less lethal shotgun at almost point blank for no reason. 
+                    <a href="https://t.co/JVDCbHgXJq">pic.twitter.com/JVDCbHgXJq
+                    </a>
+                    </p>&mdash; joeyneverjoe (he/him) (@joeyneverjoe) 
+                    <a href="https://twitter.com/joeyneverjoe/status/1416461219884457984?ref_
+                    src=twsrc%5Etfw">July 17, 2021
+                    </a>
+                </blockquote> 
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+                    ></script>
             </VerticalTimelineElement>
 
                 {incidentElements}
