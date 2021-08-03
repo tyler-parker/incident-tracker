@@ -8,7 +8,7 @@ class IncidentContext extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("https://api.846policebrutality.com/api/incidents?page[limit]=100")
+        axios.get("https://api.846policebrutality.com/api/incidents?page[limit]=30")
             .then(res => res)
             .then(res => {
                 this.setState({incidentsArr: [...res.data.data]})

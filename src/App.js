@@ -23,7 +23,7 @@ function App() {
           <VStack spacing={8}>
             <MapChart />
             <Divider />
-            {/* <Timeline /> */}
+            <Timeline />
           </VStack>
         </Grid>
         <Footer />
