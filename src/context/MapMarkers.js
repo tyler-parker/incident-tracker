@@ -1,10 +1,10 @@
 import React from 'react'
 import { IncidentContextConsumer } from './IncidentContext'
 import { Marker } from "react-simple-maps";
+import axios from 'axios'
 
 
 function MapMarkers() {
-
 
     return (
         <IncidentContextConsumer>

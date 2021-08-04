@@ -7,8 +7,8 @@ import {
   Annotation
 } from "react-simple-maps";
 import MapMarkers from "../../context/MapMarkers";
-
 import allStates from "./data/allstates.json";
+import { IncidentContextConsumer } from "../../context/IncidentContext";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -75,8 +75,8 @@ const MapChart = () => {
       {/* Here is where we will populate the markers given from the API's geocoding */}
       {/* <Marker coordinates={[-74.006, 40.7128]} >
         <circle r={3} fill="#F53" />
-      </Marker>
-      <Marker coordinates={[-111.8162931, 40.6183158]} >
+        </Marker>
+        <Marker coordinates={[-111.8162931, 40.6183158]} >
         <circle r={3} fill="#F53" />
       </Marker> */}
       <MapMarkers />

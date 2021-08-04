@@ -8,12 +8,21 @@ class IncidentContext extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("https://api.846policebrutality.com/api/incidents?page[limit]=30")
+        axios.get("https://api.846policebrutality.com/api/incidents?page[limit]=10")
             .then(res => res)
             .then(res => {
                 this.setState({incidentsArr: [...res.data.data]})
             })
             .catch(err => console.log(err)) 
+    }
+
+    getStateData = (stateCode) => {
+        axios.get(`https://api.vschool.io/tyler-parker/thing/${stateCode}`)
+            .then(res => {
+                console.log("state data", res.data.data)
+                this.setState({incidentsArr: [...res.data.data]})
+            })
+            .catch(err => console.log(err))
     }
 
     render(){
