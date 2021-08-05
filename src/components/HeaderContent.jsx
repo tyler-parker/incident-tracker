@@ -26,8 +26,8 @@ export function HeaderContent() {
                     <Flex justifyContent='flex-end' alignItems='space-around'>
                         <IncidentContextConsumer>
                             { context => 
-                                <Select placeholder="AL" size='lg' mr={5}>
-                                    {usStates.map(state => <option key={state.abbreviation} onClick={() => context.getStateData(state.name)} >
+                                <Select placeholder="AL" size='lg' mr={5} value={context.currentState} onChange={() => context.getStateData()}>
+                                    {usStates.map(state => <option key={state.abbreviation}  value={state.name}>
                                         {state.abbreviation}
                                     </option>)}
                                 </Select>

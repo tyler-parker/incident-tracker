@@ -1,5 +1,5 @@
-import React  from 'react'
-import { Box, Text, Link } from '@chakra-ui/react'
+import React, { useContext }  from 'react'
+import { Box, Text, Link, useColorMode } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { GiPoliceOfficerHead } from 'react-icons/gi'
@@ -10,11 +10,11 @@ import { Tweet } from 'react-twitter-widgets'
 
 export default function Timeline() {
 // Mapping api data into the timeline cards (for some reason Chakra components aren't working correctly within the timeline elements)
-    
+    const { colorMode } = useColorMode()
     return (
         <Box w='100%'>
             <Text fontSize='4xl'>Timeline of Incidents</Text>
-            <VerticalTimeline contentStyle={{width: "100%"}}>
+            <VerticalTimeline contentStyle={{width: "100%"}} className={'vertical-timeline-custom-line'}>
                 <IncidentContextConsumer>
                     {
                         ({incidentsArr}) => {
@@ -24,9 +24,9 @@ export default function Timeline() {
                                 <VerticalTimelineElement
                                     className="vertical-timeline-element--work"
                                     contentStyle={{ background: '#FF5533', color: '#fff' }}
-                                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                    contentArrowStyle={{ borderRight: '7px solid  #FF5533' }}
                                     date={incident.date}
-                                    dateClassName={'vertical-timeline-element-date'}
+                                    dateClassName={'vertical-timeline-element-date-light'}
                                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                                     icon={<GiPoliceOfficerHead />}
                                     key={incident.id}

@@ -1,5 +1,18 @@
-.vertical-timeline-element-date {
-    float: left;
-    padding: .8em 0;
-    opacity: .7;
+.vertical-timeline-custom-line::before {
+    background: #424242;
 }
+.vertical-timeline-element-date-light {
+    
+    color: #424242
+}
+
+.vertical-timeline-element-date-dark {
+    color: #FFFFFF
+}
+
+
+  .vertical-timeline-custom-line .vertical-timeline-element--work .vertical-timeline-element-icon {
+    box-shadow: 0 0 0 4px #1976d2, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  
