@@ -1,5 +1,16 @@
-import React, { useContext }  from 'react'
-import { Box, Text, Link, useColorMode } from '@chakra-ui/react'
+import { 
+    Box,
+    Text,
+    useColorMode,
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    List,
+    UnorderedList,
+    ListItem
+ } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { GiPoliceOfficerHead } from 'react-icons/gi'
@@ -9,8 +20,7 @@ import { IncidentContextConsumer } from '../context/IncidentContext';
 import { Tweet } from 'react-twitter-widgets'
 
 export default function Timeline() {
-// Mapping api data into the timeline cards (for some reason Chakra components aren't working correctly within the timeline elements)
-    const { colorMode } = useColorMode()
+// Mapping api data into the timeline cards (for some reason Chakra components aren't working correctly within the timeline elements
     return (
         <Box w='100%'>
             <Text fontSize='4xl'>Timeline of Incidents</Text>
@@ -43,6 +53,23 @@ export default function Timeline() {
                                             console.log(twitterID === null ? '' : twitterID.toString())
                                             return <Tweet tweetId={twitterID === null? '' : twitterID.toString()} options={{ theme: 'dark' }} />
                                         }  )}
+                                    <Accordion allowMultiple>
+                                        <AccordionItem>
+                                            <Text>
+                                                <AccordionButton>
+                                                    <Box flex='1' textAlign='left'>
+                                                        Links
+                                                    </Box>
+                                                    <AccordionIcon />
+                                                </AccordionButton>
+                                            </Text>
+                                            <AccordionPanel>
+                                                <UnorderedList spacing={3}>
+                                                    {incident.links.map(l => <ListItem>{l}</ListItem>)}
+                                                </UnorderedList>
+                                            </AccordionPanel>
+                                        </AccordionItem>
+                                    </Accordion>
                                 </VerticalTimelineElement>
                             )
                             return incidentElements
