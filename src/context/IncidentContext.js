@@ -16,26 +16,37 @@ class IncidentContext extends React.Component {
             .catch(err => console.log(err)) 
     }
 
-    getStateData = (stateName) => {
-        axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${stateName}`)
+    componentDidUpdate(prevState) {
+        if (prevState.currentState !== this.state.currentState) {
+            axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${this.state.currentState}`)
             .then(res => {
                 this.setState({incidentsArr: [...res.data.data]})
                 console.log("state data", res.data.data)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err)) 
+        }
     }
 
     handleStateSelect = (e) => {
         const {value} = e.target
-        this.setState({currentState: [e.value]})
+        this.setState({currentState: [value]})
     }
+
+        // getStateData = (stateName) => {
+    //     axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${stateName}`)
+    //         .then(res => {
+    //             this.setState({incidentsArr: [...res.data.data]})
+    //             console.log("state data", res.data.data)
+    //         })
+    //         .catch(err => console.log(err))
+    // }
 
     render(){
         return(
             <Provider value={{
                 incidentsArr: this.state.incidentsArr,
                 currentState: this.state.currentState, 
-                getStateData: this.getStateData,
+                // getStateData: this.getStateData,
                 handleStateSelect: this.handleStateSelect
                 }}>
                 {this.props.children}

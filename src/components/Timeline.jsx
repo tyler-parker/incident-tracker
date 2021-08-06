@@ -7,7 +7,7 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
-    List,
+    Link,
     UnorderedList,
     ListItem
  } from '@chakra-ui/react'
@@ -24,7 +24,7 @@ export default function Timeline() {
     return (
         <Box w='100%'>
             <Text fontSize='4xl'>Timeline of Incidents</Text>
-            <VerticalTimeline contentStyle={{width: "100%"}} className={'vertical-timeline-custom-line'}>
+            <VerticalTimeline className={'vertical-timeline-custom-line'}>
                 <IncidentContextConsumer>
                     {
                         ({incidentsArr}) => {
@@ -65,7 +65,7 @@ export default function Timeline() {
                                             </Text>
                                             <AccordionPanel>
                                                 <UnorderedList spacing={3}>
-                                                    {incident.links.map(l => <ListItem>{l}</ListItem>)}
+                                                    {incident.links.map(l => <ListItem><Link href={l} isExternal>{l}</Link></ListItem>)}
                                                 </UnorderedList>
                                             </AccordionPanel>
                                         </AccordionItem>
