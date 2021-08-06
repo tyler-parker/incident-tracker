@@ -18,7 +18,7 @@ export function HeaderContent() {
     return (
             <>
                 <Flex align="center" mr={5}>  
-                        <Heading as="h1" size="xl" letterSpacing={"-.1rem"} p='15px'>  
+                        <Heading as="h2" size="lg" letterSpacing={"-.1rem"} p='15px'>  
                             Police Brutality Project  
                         </Heading>
                     </Flex>  
@@ -28,7 +28,7 @@ export function HeaderContent() {
                             { context => 
                                 <Select 
                                 placeholder="AL" 
-                                size='lg' 
+                                size='md' 
                                 mr={5} 
                                 value={context.currentState} 
                                 onChange={(e) => context.handleStateSelect(e)}

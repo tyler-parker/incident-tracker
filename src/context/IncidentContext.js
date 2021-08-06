@@ -32,21 +32,11 @@ class IncidentContext extends React.Component {
         this.setState({currentState: [value]})
     }
 
-        // getStateData = (stateName) => {
-    //     axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${stateName}`)
-    //         .then(res => {
-    //             this.setState({incidentsArr: [...res.data.data]})
-    //             console.log("state data", res.data.data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
     render(){
         return(
             <Provider value={{
                 incidentsArr: this.state.incidentsArr,
                 currentState: this.state.currentState, 
-                // getStateData: this.getStateData,
                 handleStateSelect: this.handleStateSelect
                 }}>
                 {this.props.children}

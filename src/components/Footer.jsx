@@ -1,6 +1,5 @@
 import { Box, Stack, HStack } from '@chakra-ui/react'
 import * as React from 'react'
-// import { SocialMediaLinks } from './SocialMediaLinks'
 import { FooterContent } from './FooterContent'
 
 export default function Footer(params) {

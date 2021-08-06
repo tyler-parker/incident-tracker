@@ -9,7 +9,8 @@ import {
     AccordionIcon,
     Link,
     UnorderedList,
-    ListItem
+    ListItem,
+    Divider
  } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -28,9 +29,7 @@ export default function Timeline() {
                 <IncidentContextConsumer>
                     {
                         ({incidentsArr}) => {
-                            
                             const incidentElements = incidentsArr.map(incident => 
-                                
                                 <VerticalTimelineElement
                                     className="vertical-timeline-element--work"
                                     contentStyle={{ background: '#FF5533', color: '#fff' }}
@@ -43,33 +42,39 @@ export default function Timeline() {
                                 >
                                     <h3 className="vertical-timeline-element-title">{incident.title}</h3>
                                     <Text className="vertical-timeline-element-subtitle">{incident.city}</Text>
+                                    
                                     <Text >
                                         {incident.description}
                                     </Text>
-                                        {/* {incident.links.map(l => <Link href={l} isExternal>{l}</Link> )} */}
-                                        {incident.links.map(l => {
-                                            const urlSplit = l.split('status/')
-                                            const twitterID = urlSplit[1] ? urlSplit[1] : null;
-                                            console.log(twitterID === null ? '' : twitterID.toString())
-                                            return <Tweet tweetId={twitterID === null? '' : twitterID.toString()} options={{ theme: 'dark' }} />
-                                        }  )}
-                                    <Accordion allowMultiple>
-                                        <AccordionItem>
-                                            <Text>
-                                                <AccordionButton>
-                                                    <Box flex='1' textAlign='left'>
-                                                        Links
-                                                    </Box>
-                                                    <AccordionIcon />
-                                                </AccordionButton>
-                                            </Text>
-                                            <AccordionPanel>
-                                                <UnorderedList spacing={3}>
-                                                    {incident.links.map(l => <ListItem><Link href={l} isExternal>{l}</Link></ListItem>)}
-                                                </UnorderedList>
-                                            </AccordionPanel>
-                                        </AccordionItem>
-                                    </Accordion>
+
+                                    <Divider />
+
+                                    {/* {incident.links.map(l => <Link href={l} isExternal>{l}</Link> )} */}
+                                    {incident.links.map(l => {
+                                        const urlSplit = l.split('status/')
+                                        const twitterID = urlSplit[1] ? urlSplit[1] : null;
+                                        console.log(twitterID === null ? '' : twitterID.toString())
+                                        return <Tweet tweetId={twitterID === null? '' : twitterID.toString()} options={{ theme: 'dark' }} />
+                                    }  )}
+
+                                <Accordion allowMultiple>
+                                    <AccordionItem>
+                                        <Text>
+                                            <AccordionButton>
+                                                <Box flex='1' textAlign='left'>
+                                                    Links
+                                                </Box>
+                                                <AccordionIcon />
+                                            </AccordionButton>
+                                        </Text>
+                                        <AccordionPanel>
+                                            <UnorderedList spacing={3}>
+                                                {incident.links.map(l => <ListItem><Link href={l} isExternal>{l}</Link></ListItem>)}
+                                            </UnorderedList>
+                                        </AccordionPanel>
+                                    </AccordionItem>
+                                </Accordion>
+
                                 </VerticalTimelineElement>
                             )
                             return incidentElements
