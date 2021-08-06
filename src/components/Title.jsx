@@ -1,14 +1,20 @@
 import React from 'react'
 import { Text,
          Center,
-         Box
+         Box,
+         Stack
  } from "@chakra-ui/react"
 
 export default function Title() {
     return (
-        <Box>
+        <Box mt={"200px"}>
             <Center>
-                <Text fontSize={'4xl'} mt={5}>Acts of Violence Against George Floyd Protestors</Text>
+                <Stack>
+                    <Text fontSize={'4xl'} mt={5}>Acts of Violence Against George Floyd Protestors</Text>
+                    <Text fontSize={'xl'} color={'gray.500'}>
+                        Incidents of brutality against protestors that are protesting that same brutality
+                    </Text>
+                </Stack>
             </Center>   
         </Box>
     )

@@ -5,7 +5,8 @@ import {
     Flex,  
     Link,
     IconButton,
-    Select
+    Select,
+    Button
 } from "@chakra-ui/react"; 
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { IncidentContextConsumer } from '../context/IncidentContext';
@@ -40,7 +41,11 @@ export function HeaderContent() {
                             }
                         </IncidentContextConsumer>
 
-                        <Link href='https://github.com/tyler-parker/police-brutality-project' isExternal>
+                        <Link isExternal href="https://github.com/2020PB/police-brutality/issues/new?assignees=&labels=Incident+report&template=incident-report.md&title=Incident+in+CITY%2C+STATE">
+                            <Button mr={3} bgColor={'red.500'} color={'white'}>Report an incident</Button>
+                        </Link>
+
+                        <Link isExternal href='https://github.com/tyler-parker/police-brutality-project'>
                             <IconButton icon={<VscGithub />} isRound ></IconButton>
                         </Link>
                         <ColorModeSwitcher justifySelf="flex-end"/>
