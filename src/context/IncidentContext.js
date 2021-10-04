@@ -16,20 +16,15 @@ class IncidentContext extends React.Component {
             .catch(err => console.log(err)) 
     }
 
-    componentDidUpdate(prevState) {
-        if (prevState.currentState !== this.state.currentState) {
-            axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${this.state.currentState}`)
-            .then(res => {
-                this.setState({incidentsArr: [...res.data.data]})
-                console.log("state data", res.data.data)
-            })
-            .catch(err => console.log(err)) 
-        }
-    }
-
     handleStateSelect = (e) => {
         const {value} = e.target
         this.setState({currentState: [value]})
+        axios.get(`https://api.846policebrutality.com/api/incidents?filter[state]=${this.state.currentState}`)
+        .then(res => {
+            this.setState({incidentsArr: [...res.data.data]})
+            console.log("state data", res.data.data)
+        })
+        .catch(err => console.log(err)) 
     }
 
     render(){
