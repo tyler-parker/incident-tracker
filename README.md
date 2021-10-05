@@ -23,7 +23,7 @@ Data is being provided through the [846-backend](https://github.com/949mac/846-b
 * state filtering is off. After selecting a state, it populates data for the state previously selected.
 * some states don't populate -- may be too many objects.
 
-## Future Features
+## Feature Backlog
 
 * pull one incident after clicking markers on the U.S. map
 * style the incident box better, it's pretty rough right now
