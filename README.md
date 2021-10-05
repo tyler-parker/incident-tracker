@@ -8,7 +8,7 @@ An application displaying data related to police violence in response to George 
 
 ## API Documentation
 
-Data is being provided through the (846-backend)[https://github.com/949mac/846-backend/] API that collects reported incidents from protesters with video evidence. 
+Data is being provided through the [846-backend](https://github.com/949mac/846-backend/) API that collects reported incidents from protesters with video evidence. 
 
 ## Features
 
